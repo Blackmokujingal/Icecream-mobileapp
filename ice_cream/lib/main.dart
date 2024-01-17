@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'pages/intro_page.dart';
 import 'models/cart.dart';
 
@@ -15,9 +16,12 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => Cart(),
       child: Builder(
-        builder: (context) => const MaterialApp(
+        builder: (context) => MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: IntroPage(),
+          theme: ThemeData(
+            textTheme: GoogleFonts.zillaSlabTextTheme(),
+          ),
+          home: const IntroPage(),
         ),
       ),
     );

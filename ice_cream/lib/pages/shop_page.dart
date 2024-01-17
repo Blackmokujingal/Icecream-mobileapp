@@ -52,6 +52,13 @@ class ShopPageState extends State<ShopPage> {
     );
   }
 
+  // Search logic
+  void performSearch() {
+    setState(() {
+      // Trigger the search logic here
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
@@ -75,25 +82,28 @@ class ShopPageState extends State<ShopPage> {
                   borderRadius: BorderRadius.circular(8),
                   color: const Color.fromARGB(255, 241, 237, 237),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: _searchController,
-                        decoration: const InputDecoration(
-                          hintText: 'Search',
-                          border: InputBorder.none,
+                child: Form(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          controller: _searchController,
+                          decoration: const InputDecoration(
+                            hintText: 'Search',
+                            border: InputBorder.none,
+                          ),
+                          onFieldSubmitted: (value) {
+                            performSearch();
+                          },
                         ),
                       ),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.search, color: Colors.grey),
-                      onPressed: () {
-                        setState(() {});
-                      },
-                    ),
-                  ],
+                      IconButton(
+                        icon: const Icon(Icons.search, color: Colors.grey),
+                        onPressed: performSearch,
+                      ),
+                    ],
+                  ),
                 ),
               ),
 
