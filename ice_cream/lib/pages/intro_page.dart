@@ -118,7 +118,7 @@ class _IntroPageState extends State<IntroPage>
 
                   // Leftward Arrow with Text
                   Positioned(
-                    bottom: 100,
+                    bottom: 60,
                     child: Row(
                       children: [
                         const Text(
