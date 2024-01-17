@@ -31,7 +31,7 @@ class ShopPageState extends State<ShopPage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Padding(
-          padding: const EdgeInsets.all(3),
+          padding: const EdgeInsets.all(1),
           child: Text(
             'Ice cream successfully added to your cart!',
             textAlign: TextAlign.center,
@@ -45,7 +45,7 @@ class ShopPageState extends State<ShopPage> {
         duration: const Duration(seconds: 2),
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
         ),
         backgroundColor: Colors.green,
       ),
