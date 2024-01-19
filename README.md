@@ -21,7 +21,7 @@ Suivez ces étapes pour configurer l'application mobile Flutter Ice Cream Shop s
     ```
 
     ```bash
-    cd ice-cream-shop-app
+    cd Icecream-mobileapp/ice_cream
     ```
 
 2. **Vérification Flutter :**
