@@ -59,10 +59,10 @@ Suivez ces étapes pour configurer l'application mobile Flutter Ice Cream Shop s
 Explorez les fonctionnalités de l'application mobile Ice Cream Shop :
 
 1. **Recherche de Glaces :**
-   Permet aux utilisateurs de rechercher leurs parfums de glace préférés.
+   Permet aux utilisateurs de rechercher leurs parfums de glace préférés ou par type de glace (cône, bâtonnet, pot).
 
 2. **Ajouter au Panier :**
-   Permet aux utilisateurs d'ajouter leur glace sélectionnée à leur panier d'achat.
+   Permet aux utilisateurs d'ajouter leur glace sélectionnée à leur panier d'achat mais aussi de modifier les quantités de cette glace.
 
 3. **Retirer du Panier :**
    Autorise les utilisateurs à retirer des articles de leur panier d'achat.
