@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ice_cream/_components/cart_item.dart';
 import 'package:provider/provider.dart';
 import '../models/cart.dart';
-import '../models/ice.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -10,7 +9,7 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
-      builder: (context, value, child) => Padding(
+      builder: (context, cart, child) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,13 +17,16 @@ class CartPage extends StatelessWidget {
             // heading
             const Text(
               'My Cart',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: const Color.fromARGB(255, 38, 39, 39)),
             ),
 
-            const SizedBox(height: 20), // Increased spacing
+            const SizedBox(height: 20),
 
             Expanded(
-              child: value.getUserCart().isEmpty
+              child: cart.getUserCart().isEmpty
                   ? const Center(
                       child: Text(
                         'Your cart is empty.',
@@ -32,16 +34,14 @@ class CartPage extends StatelessWidget {
                       ),
                     )
                   : ListView.builder(
-                      itemCount: value.getUserCart().length,
+                      itemCount: cart.getUserCart().length,
                       itemBuilder: (context, index) {
-                        // Get individual ice
-                        Ice individualIce = value.getUserCart()[index];
-
-                        // Return the modernized cart item
+                        // Get individual cart item
+                        CartItem cartItem = cart.getUserCart()[index];
                         return Card(
-                          elevation: 2,
+                          elevation: 1,
                           margin: const EdgeInsets.symmetric(vertical: 8),
-                          child: CartItem(ice: individualIce),
+                          child: CartItemWidget(cartItem: cartItem),
                         );
                       },
                     ),

@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class MyBottomNavBar extends StatelessWidget {
+  final int currentIndex;
   final void Function(int)? onTabChange;
 
-  const MyBottomNavBar({Key? key, required this.onTabChange}) : super(key: key);
+  const MyBottomNavBar({Key? key, required this.currentIndex, required this.onTabChange}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      backgroundColor: Colors.white,
-      color: Colors.blue,
-      buttonBackgroundColor: Colors.blue[600],
-      height: 75,
-      index: 0,
+      backgroundColor: Colors.transparent,
+      height: 60,
+      color: Colors.pink[200]!,
+      buttonBackgroundColor: Colors.pink[300]!,
+      index: currentIndex,
       onTap: onTabChange,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(milliseconds: 300),
